@@ -18,5 +18,15 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.price.com.hk',
+        port: '',
+        pathname: '/space/ec_product/*/*.png',
+      },
+    ],
+  },
 };
 export default config;
