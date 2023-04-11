@@ -12,7 +12,7 @@ const ProductDetails: NextPage = () => {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#eed991] to-[#ccf7f4] bg-fixed">
+      <main className="flex min-h-screen flex-col gap-4 items-center justify-center bg-gradient-to-b from-[#eed991] to-[#ccf7f4] bg-fixed">
         {product ? (
           <>
             <div className="relative h-48 w-48 overflow-hidden">
@@ -32,22 +32,19 @@ const ProductDetails: NextPage = () => {
               <>
                 <a
                   key={product.id}
-                  className="flex max-w-xs flex-row gap-4 rounded-xl bg-white/10 p-4 text-slate-800 hover:bg-white/20"
+                  className="flex items-center max-w-xs flex-row gap-4 rounded-xl bg-white/10 p-4 text-slate-800 hover:bg-white/20"
                   href={price.url || ""}
                   target="_blank"
                   rel="noopener"
                 >
-                  <div className="text-lg font-bold text-slate-600">
+                  <div className="text-sm font-bold">{price.name}</div>
+                  <div className="text-lg font-bold">
                     ${price.price}
                   </div>
-                  <div className="text-base font-bold">{price.name}</div>
+                  <div>→</div>
                 </a>
               </>
             ))}
-
-            <code className="whitespace-pre">
-              {JSON.stringify(product, undefined, 2)}
-            </code>
           </>
         ) : (
           <>Loading</>
