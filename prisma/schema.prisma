@@ -68,3 +68,30 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Product {
+    id String @id @default(cuid())
+
+    name        String?
+    description String?        @db.Text
+    image       String?        @db.Text
+    prices      ProductPrice[]
+
+    updatedAt DateTime @updatedAt
+    createdAt DateTime @default(now())
+}
+
+model ProductPrice {
+    id        String @id @default(cuid())
+    productId String
+
+    url   String?
+    price Decimal
+
+    product Product @relation(fields: [productId], references: [id])
+
+    updatedAt DateTime @updatedAt
+    createdAt DateTime @default(now())
+
+    @@index([productId])
+}
