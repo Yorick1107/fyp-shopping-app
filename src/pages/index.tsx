@@ -25,6 +25,8 @@ const Home: NextPage = () => {
             Your <span className="text-[hsl(280,100%,70%)]">personal</span>{" "}
             shopping assistant
           </h1>
+          <a href="https://gc862ce16f4fa8c-db19.adb.ap-seoul-1.oraclecloudapps.com/ords/r/demows/spsa/product-comparison?session=783197881338" target="_blank" rel="noopener">Enter</a>
+          <a href="https://gc862ce16f4fa8c-db19.adb.ap-seoul-1.oraclecloudapps.com/ords/r/demows/spsa/product-comparison?session=783197881338" target="_blank" rel="noopener">Recent popular</a>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:gap-8">
             {products.data ? (
               products.data.map((product) => (
